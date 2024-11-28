@@ -1,30 +1,47 @@
 using UnityEngine;
 
-public class EnemyBehaviours
+
+
+
+
+ 
+public  class EnemyBehaviour 
 {
 
-    private float x, y;
-    private float direction;
+    public float x;
+    public float y;
+    public float direction;
 
 
-    public void Init(float dir)
+    public virtual void Init(float dir)
     {
-
         direction = dir;
     }
 
 
-    public Vector2 Behaviour(Vector2 xd)
+
+    public virtual Vector2 Behaviour(Vector2 xd)
     {
         Vector3 destination = direction == -1 ? Positions.SpitRoastRight : Positions.SpitRoastLeft;
         Vector2 newPos = Vector2.MoveTowards(xd, destination, 2 * Time.fixedDeltaTime);
         return newPos;
+
     }
+
 }
 
 
 
 
+public class Test :EnemyBehaviour
+{
+    public override Vector2 Behaviour(Vector2 xy)
+    {
+        throw new System.NotImplementedException();
+    }
 
-
-
+    public override void Init(float dir)
+    {
+        throw new System.NotImplementedException();
+    }
+}

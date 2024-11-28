@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     public float speed = 1;
     private float direction;
     Rigidbody2D rb;
-    EnemyBehaviours eb;
+    EnemyBehaviour eb;
     
     Func<Vector2, Vector2> pathfuncPointer;
     Action BombFuncPointer;
