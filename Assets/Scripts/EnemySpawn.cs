@@ -7,9 +7,10 @@ public class EnemySpawn : MonoBehaviour
     public Vector3[] spawnPoints;
 
     int index = 0;
-    // Start is called before the first frame update
+    
     void Start()
     {
+        
         InvokeRepeating(nameof(SpawnEnemy), 0.1f, 2f);
     }
 
