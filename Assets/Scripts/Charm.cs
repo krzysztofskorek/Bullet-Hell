@@ -9,7 +9,7 @@ public class Charm : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Explode", 2);
+        Invoke(nameof(Explode), 2);
         rb = GetComponent<Rigidbody2D>();
 
     }
@@ -27,7 +27,7 @@ public class Charm : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Enemy enemy = collision.GetComponent<Enemy>();
+        EnemyMovement enemy = collision.GetComponent<EnemyMovement>();
         enemy.GetHurt();
         Explode();
     }
