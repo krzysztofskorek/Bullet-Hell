@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     Func<Vector2, Vector2> pathfuncPointer;
     Action BombFuncPointer;
     
-    public BulletBehaviours bb;
+    public BulletBehaviour bb;
     private bool canStart;
 
     public void Start()

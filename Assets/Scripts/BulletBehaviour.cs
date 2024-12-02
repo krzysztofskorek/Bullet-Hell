@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletBehaviours 
+public class BulletBehaviour 
 {
     public  string leav = "Leaf";
 
@@ -10,7 +10,7 @@ public class BulletBehaviours
 
     private GameObject player;
 
-    public BulletBehaviours(Transform trans) {
+    public BulletBehaviour(Transform trans) {
         this.trans = trans;
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
@@ -33,16 +33,4 @@ public class BulletBehaviours
 
 }
 
-
-public class Garrote : BulletBehaviours
-{
-    public Garrote(Transform trans) : base(trans)
-    {
-    }
-
-    public override void Behaviour() { 
-    
-    
-    }
-}
 
