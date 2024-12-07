@@ -815,6 +815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a025ca7f83947d74db80547e4b87b6c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  functionName: Test
   charm: {fileID: 8250016770046284765, guid: afae62aff1cafce41bd85c6197fca002, type: 3}
   shootingPoint: {fileID: 1451373388}
   HitBall: {fileID: 1481694939}

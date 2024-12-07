@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,17 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
 
+    [SerializeField] string functionName;
+
     //public items
     public GameObject charm;
     public Transform shootingPoint; // point from where the player shoots.
     public SpriteRenderer HitBall;
+
     // public variables
     public float Maxspeed = 5.0f;
+
+     
 
     // initialized at the start
     PlayerInputs inputActions;
@@ -19,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer spriteRenderer;
     
     //private variables
+    private EnemyBehaviour enemyBehaviour;
     private bool canShoot;
     private float currSpeed;
     Color defaultColor;
@@ -28,9 +35,16 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         inputActions = new PlayerInputs();
+
         rigidbody2 = GetComponent<Rigidbody2D>();
+
         currSpeed = Maxspeed;
+
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        var type = Type.GetType(functionName);  
+        enemyBehaviour = (EnemyBehaviour)Activator.CreateInstance(type);
+
         defaultColor = spriteRenderer.color;
     }
 

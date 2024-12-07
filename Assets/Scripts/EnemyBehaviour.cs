@@ -1,11 +1,12 @@
+using System;
 using UnityEngine;
 
 
 
 
 
- 
-public  class EnemyBehaviour 
+[Serializable]
+public  class EnemyBehaviour  
 {
 
     public float x;
@@ -28,22 +29,12 @@ public  class EnemyBehaviour
 
     }
 
+    public virtual void Baby() { }
+
 }
 
 
 
 
-public class Monkey :EnemyBehaviour
-{
-    public override Vector2 Behaviour(Vector2 xy)
-    {
-        throw new System.NotImplementedException();
-    }
 
-    public override void Init(float dir)
-    {
-        throw new System.NotImplementedException();
-    }
-}
- 
    
